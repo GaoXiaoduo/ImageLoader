@@ -1,4 +1,4 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.mss.imageloader.R;
+import com.mss.imageloader.activity.BaseActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;

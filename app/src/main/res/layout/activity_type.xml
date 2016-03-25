@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context="com.mss.imageloader.TypeActivity">
+    tools:context=".activity.TypeActivity">
 
     <Button
         android:id="@+id/btn_fresco"
@@ -40,6 +40,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Universal"
+        />
+
+    <Button
+        android:id="@+id/btn_volley"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Volley"
         />
 
 </LinearLayout>

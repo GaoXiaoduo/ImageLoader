@@ -1,29 +1,27 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.mss.imageloader.adapter.FrescoAdapter;
-import com.squareup.picasso.Picasso;
+import com.mss.imageloader.R;
+import com.mss.imageloader.adapter.VolleyAdapter;
 
 import java.util.ArrayList;
 
 /**
- * Fresco框架
+ * Volley框架
  *
  * @author gaoxiaoduo
  * @version 1.0
  * @date 16/3/14下午2:36
  */
-public class FrescoActivity extends BaseActivity
+public class VolleyActivity extends BaseActivity
 {
 
-    private FrescoAdapter adapter;
+    private VolleyAdapter adapter;
 
     private GridView gridView;
 
@@ -36,7 +34,6 @@ public class FrescoActivity extends BaseActivity
     {
 
         super.onCreate(savedInstanceState);
-        Fresco.initialize(this);//初始化框架,需在布局调用前初始化
         initView();
         initUrl();
         initAdapter();
@@ -47,13 +44,13 @@ public class FrescoActivity extends BaseActivity
     protected int contentView ()
     {
 
-        return R.layout.activity_fresco;
+        return R.layout.activity_volley;
     }
 
     private void initView ()
     {
 
-        gridView = (GridView) findViewById(R.id.fresco_grid_view);
+        gridView = (GridView) findViewById(R.id.volley_grid_view);
     }
 
     private void initUrl ()
@@ -69,7 +66,7 @@ public class FrescoActivity extends BaseActivity
     private void initAdapter ()
     {
 
-        adapter = new FrescoAdapter(this, mUrlList);
+        adapter = new VolleyAdapter(this, mUrlList);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -78,20 +75,10 @@ public class FrescoActivity extends BaseActivity
             public void onItemClick (AdapterView<?> adapterView, View view, int i, long l)
             {
 
-                Intent intent = new Intent(FrescoActivity.this, FrescoImageShowActivity.class);
+                Intent intent = new Intent(VolleyActivity.this, VolleyImageShowActivity.class);
                 intent.putExtra("imageUrl", mUrlList.get(i));
                 startActivity(intent);
             }
         });
-    }
-
-    private void setUriImage ()
-    {
-
-        Uri imageUri = Uri.parse("http://pooyak.com/p/progjpeg/jpegload.cgi?o=3");
-        Picasso.with(this).load(imageUri)
-                .placeholder(R.mipmap.icon_placeholder)
-                .error(R.mipmap.icon_failure);
-        //.into(mImgView);
     }
 }

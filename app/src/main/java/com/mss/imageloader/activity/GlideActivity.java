@@ -1,4 +1,4 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,22 +7,22 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.mss.imageloader.adapter.UniveralAdapter;
+import com.mss.imageloader.R;
+import com.mss.imageloader.adapter.GlideAdapter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 /**
- * Universal框架
+ * Glide框架
  *
  * @author gaoxiaoduo
  * @version 1.0
  * @date 16/3/14下午2:36
  */
-public class UniversalActivity extends BaseActivity
+public class GlideActivity extends BaseActivity
 {
-
-    private UniveralAdapter adapter;
+    private GlideAdapter adapter;
 
     private GridView gridView;
 
@@ -45,13 +45,13 @@ public class UniversalActivity extends BaseActivity
     protected int contentView ()
     {
 
-        return R.layout.activity_universal;
+        return R.layout.activity_glide;
     }
 
     private void initView ()
     {
 
-        gridView = (GridView) findViewById(R.id.universal_grid_view);
+        gridView = (GridView) findViewById(R.id.grid_view);
     }
 
     private void initUrl ()
@@ -67,7 +67,7 @@ public class UniversalActivity extends BaseActivity
     private void initAdapter ()
     {
 
-        adapter = new UniveralAdapter(this, mUrlList);
+        adapter = new GlideAdapter(this, mUrlList);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -76,8 +76,7 @@ public class UniversalActivity extends BaseActivity
             public void onItemClick (AdapterView<?> adapterView, View view, int i, long l)
             {
 
-                Intent intent = new Intent(UniversalActivity.this, UniversalImageShowActivity
-                        .class);
+                Intent intent = new Intent(GlideActivity.this, GlideImageShowActivity.class);
                 intent.putExtra("imageUrl", mUrlList.get(i));
                 startActivity(intent);
             }

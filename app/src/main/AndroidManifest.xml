@@ -29,7 +29,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TypeActivity"
+            android:name=".activity.TypeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -38,15 +38,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".FrescoActivity"></activity>
-        <activity android:name=".GlideActivity"></activity>
-        <activity android:name=".PicassoActivity"></activity>
-        <activity android:name=".UniversalActivity"></activity>
-        <activity android:name=".FrescoImageShowActivity"></activity>
-        <activity android:name=".PicassoImageShowActivity"></activity>
-        <activity android:name=".GlideImageShowActivity"></activity>
-        <activity android:name=".UniversalImageShowActivity"></activity>
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.FrescoActivity"></activity>
+        <activity android:name=".activity.GlideActivity"></activity>
+        <activity android:name=".activity.PicassoActivity"></activity>
+        <activity android:name=".activity.UniversalActivity"></activity>
+        <activity android:name=".activity.VolleyActivity"></activity>
+        <activity android:name=".activity.FrescoImageShowActivity"></activity>
+        <activity android:name=".activity.PicassoImageShowActivity"></activity>
+        <activity android:name=".activity.GlideImageShowActivity"></activity>
+        <activity android:name=".activity.UniversalImageShowActivity"></activity>
+        <activity android:name=".activity.VolleyImageShowActivity"></activity>
     </application>
 
 </manifest>

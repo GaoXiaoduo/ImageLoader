@@ -1,4 +1,4 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
@@ -27,6 +27,7 @@ import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.image.QualityInfo;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
+import com.mss.imageloader.R;
 import com.squareup.okhttp.OkHttpClient;
 
 import java.util.ArrayList;

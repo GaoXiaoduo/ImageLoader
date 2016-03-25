@@ -1,4 +1,4 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,21 +7,24 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.mss.imageloader.adapter.GlideAdapter;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.mss.imageloader.R;
+import com.mss.imageloader.adapter.FrescoAdapter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 /**
- * Glide框架
+ * Fresco框架
  *
  * @author gaoxiaoduo
  * @version 1.0
  * @date 16/3/14下午2:36
  */
-public class GlideActivity extends BaseActivity
+public class FrescoActivity extends BaseActivity
 {
-    private GlideAdapter adapter;
+
+    private FrescoAdapter adapter;
 
     private GridView gridView;
 
@@ -34,6 +37,7 @@ public class GlideActivity extends BaseActivity
     {
 
         super.onCreate(savedInstanceState);
+        Fresco.initialize(this);//初始化框架,需在布局调用前初始化
         initView();
         initUrl();
         initAdapter();
@@ -44,13 +48,13 @@ public class GlideActivity extends BaseActivity
     protected int contentView ()
     {
 
-        return R.layout.activity_glide;
+        return R.layout.activity_fresco;
     }
 
     private void initView ()
     {
 
-        gridView = (GridView) findViewById(R.id.grid_view);
+        gridView = (GridView) findViewById(R.id.fresco_grid_view);
     }
 
     private void initUrl ()
@@ -66,7 +70,7 @@ public class GlideActivity extends BaseActivity
     private void initAdapter ()
     {
 
-        adapter = new GlideAdapter(this, mUrlList);
+        adapter = new FrescoAdapter(this, mUrlList);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -75,7 +79,7 @@ public class GlideActivity extends BaseActivity
             public void onItemClick (AdapterView<?> adapterView, View view, int i, long l)
             {
 
-                Intent intent = new Intent(GlideActivity.this, GlideImageShowActivity.class);
+                Intent intent = new Intent(FrescoActivity.this, FrescoImageShowActivity.class);
                 intent.putExtra("imageUrl", mUrlList.get(i));
                 startActivity(intent);
             }
@@ -90,6 +94,5 @@ public class GlideActivity extends BaseActivity
                 .placeholder(R.mipmap.icon_placeholder)
                 .error(R.mipmap.icon_failure);
         //.into(mImgView);
-
     }
 }

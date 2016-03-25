@@ -1,8 +1,10 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.mss.imageloader.R;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -42,7 +44,7 @@ public class TypeActivity extends BaseActivity
         return R.layout.activity_type;
     }
 
-    @OnClick({R.id.btn_fresco, R.id.btn_glide, R.id.btn_picasso, R.id.btn_universal})
+    @OnClick({R.id.btn_fresco, R.id.btn_glide, R.id.btn_picasso, R.id.btn_universal, R.id.btn_volley})
     void onClick (View view)
     {
 
@@ -59,6 +61,9 @@ public class TypeActivity extends BaseActivity
                 break;
             case R.id.btn_universal:
                 changeActivity(UniversalActivity.class);
+                break;
+            case R.id.btn_volley:
+                changeActivity(VolleyActivity.class);
                 break;
         }
     }

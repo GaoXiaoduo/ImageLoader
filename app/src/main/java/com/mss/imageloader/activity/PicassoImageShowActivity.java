@@ -1,10 +1,11 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.mss.imageloader.R;
 import com.squareup.picasso.Picasso;
 
 /**

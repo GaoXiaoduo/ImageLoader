@@ -1,4 +1,4 @@
-package com.mss.imageloader;
+package com.mss.imageloader.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.mss.imageloader.R;
 import com.mss.imageloader.adapter.PicassoAdapter;
 import com.squareup.picasso.Picasso;
 

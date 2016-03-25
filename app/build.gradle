@@ -36,4 +36,6 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //universal图片加载库
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //volley
+    compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
 }
